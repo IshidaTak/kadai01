@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kadai.databinding.FragmentFirstBinding
 import io.realm.Realm
@@ -22,6 +23,8 @@ class FirstFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         realm = Realm.getDefaultInstance()
+        //val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager(this).orientation)
+        //addItemDecoration(dividerItemDecoration)
     }
 
     override fun onCreateView(
@@ -42,12 +45,14 @@ class FirstFragment : Fragment() {
         val schedules = realm.where<Schedule>().findAll()
         val adapter = ScheduleAdapter(schedules)
         binding.list.adapter = adapter
+        //addItemDecoration(dividerItemDecoration)
 
         adapter.setOnItemClickListener { id ->
             id?.let {
                 val action =
                     FirstFragmentDirections.actionToScheduleEditFragment(it)
                 findNavController().navigate(action)
+                //addItemDecoration(dividerItemDecoration)
             }
         }
         (activity as? MainActivity)?.setFabVisible(View.VISIBLE)

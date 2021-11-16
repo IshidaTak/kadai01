@@ -42,12 +42,25 @@ class ScheduleEditFragment : Fragment() {
 
     private val args: ScheduleEditFragmentArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding.dateButton.setOnClickListener {
+            DateDialog{ date ->
+                binding.dateEdit.setText(date)
+            }.show(parentFragmentManager, "date_dialog")
+        }
+
+        binding.timeButton.setOnClickListener {
+            TimeDialog{ time ->
+                binding.timeEdit.setText(time)
+            }.show(parentFragmentManager, "time_dialog")
+        }
+
         super.onViewCreated(view, savedInstanceState)
         if(args.scheduleId != -1L){
             val schedule = realm.where<Schedule>()
                 .equalTo("id",args.scheduleId).findFirst()
-            //binding.dateEdit.setText(DateFormat.format("yyyy/MM/dd",schedule?.date))
-            //binding.timeEdit.setText(DateFormat.format("HH:mm",schedule?.date))
+            binding.dateEdit.setText(DateFormat.format("yyyy/MM/dd",schedule?.date))
+            binding.timeEdit.setText(DateFormat.format("HH:mm",schedule?.date))
             //binding.idEdit.setText(schedule?.user)
             binding.titleEdit.setText(schedule?.title)
             binding.detailEdit.setText(schedule?.detail)
@@ -86,9 +99,9 @@ class ScheduleEditFragment : Fragment() {
             val maxId =db.where<Schedule>().max("id")
             val nextId = (maxId?.toLong() ?: 0L) + 1L
             val schedule = db.createObject<Schedule>(nextId)
-            //val date = " ${binding.timeEdit.text}"
-                //.toDate()
-            //if (date != null) schedule.date = date
+            val date = " ${binding.timeEdit.text}"
+                .toDate()
+            if (date != null) schedule.date = date
             //schedule.user = binding.idEdit.text.toString()
             schedule.title = binding.titleEdit.text.toString()
             schedule.detail = binding.detailEdit.text.toString()
@@ -103,8 +116,8 @@ class ScheduleEditFragment : Fragment() {
                 realm.executeTransaction{db:Realm ->
                 val schedule = db.where<Schedule>()
                     .equalTo("id",args.scheduleId).findFirst()
-                //val date = (""${binding.timeEdit.text}").toDate()
-                //if(date != null) schedule?.date = date
+                val date = ("${binding.dateEdit.text}"+"${binding.timeEdit.text}").toDate()
+                if(date != null) schedule?.date = date
                 //schedule?.user = binding.idEdit.text.toString()
                 schedule?.title = binding.titleEdit.text.toString()
                 schedule?.detail = binding.detailEdit.text.toString()

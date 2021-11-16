@@ -25,6 +25,7 @@ class ScheduleAdapter(data: OrderedRealmCollection<Schedule>):
     class ViewHolder(cell: View) : RecyclerView.ViewHolder(cell){
         val date:TextView = cell.findViewById(android.R.id.text1)
         val title: TextView = cell.findViewById(android.R.id.text2)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleAdapter.ViewHolder {
