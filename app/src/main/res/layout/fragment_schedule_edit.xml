@@ -17,7 +17,7 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/detailEdit"
@@ -31,7 +31,8 @@
         android:maxLines="8"
         android:minLines="1"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/timeEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/timeEdit"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/save"
@@ -62,7 +63,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/detailEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/detailEdit"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -123,7 +125,8 @@
         android:ems="10"
         android:inputType="date"
         app:layout_constraintStart_toEndOf="@+id/dateButton"
-        app:layout_constraintTop_toBottomOf="@+id/titleEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/titleEdit"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/timeEdit"
@@ -134,6 +137,7 @@
         android:ems="10"
         android:inputType="time"
         app:layout_constraintStart_toEndOf="@+id/timeButton"
-        app:layout_constraintTop_toBottomOf="@+id/dateEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/dateEdit"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
