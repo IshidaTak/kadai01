@@ -77,7 +77,7 @@ class ScheduleEditFragment : Fragment() {
         }
         (activity as? MainActivity)?.setFabVisible(View.INVISIBLE)
         binding.save.setOnClickListener {
-            val dialog = ConfirmDialog("保存しますか?",
+            val dialog = ConfirmDialog("保存します?",
                 "保存",{saveSchedule(it)},
                 "キャンセル",{
                     Snackbar.make(it,"キャンセルしました",Snackbar.LENGTH_SHORT)
