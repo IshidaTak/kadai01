@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.kadai.databinding.FragmentScheduleEditBinding
 import com.google.android.material.snackbar.Snackbar
 import io.realm.Realm
@@ -20,6 +21,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ScheduleEditFragment : Fragment() {
+
+    //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+    //RecyclerView.addItemDecoration(separateLine)
 
     private var _binding: FragmentScheduleEditBinding? = null
     private val binding get() = _binding!!
@@ -68,6 +73,7 @@ class ScheduleEditFragment : Fragment() {
             binding.delete.visibility = View.VISIBLE
         }else{
             binding.delete.visibility = View.INVISIBLE
+
         }
         (activity as? MainActivity)?.setFabVisible(View.INVISIBLE)
         binding.save.setOnClickListener {

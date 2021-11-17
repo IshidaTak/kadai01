@@ -8,6 +8,11 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 
 class MySchedulerApplication : Application() {
+
+    //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+    //RecyclerView.addItemDecoration(separateLine)
+
     override fun onCreate() {
         super.onCreate()
         Realm.init(this)

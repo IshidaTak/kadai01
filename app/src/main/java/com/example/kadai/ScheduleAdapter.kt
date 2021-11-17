@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.OrderedRealmCollection
 import io.realm.RealmRecyclerViewAdapter
 
 class ScheduleAdapter(data: OrderedRealmCollection<Schedule>):
     RealmRecyclerViewAdapter<Schedule,ScheduleAdapter.ViewHolder>(data,true){
+
+    //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+    //RecyclerView.add
 
     private var listener: ((Long?) -> Unit)? = null
 

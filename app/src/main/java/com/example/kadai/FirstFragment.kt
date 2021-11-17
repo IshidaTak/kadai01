@@ -9,11 +9,16 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kadai.databinding.FragmentFirstBinding
 import io.realm.Realm
 import io.realm.kotlin.where
 
 class FirstFragment : Fragment() {
+
+    //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+    //RecyclerView.addItemDecoration(separateLine)
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
@@ -21,6 +26,11 @@ class FirstFragment : Fragment() {
     private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+        //RecyclerView.addItemDecoration(separateLine)
+
         super.onCreate(savedInstanceState)
         realm = Realm.getDefaultInstance()
         //val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager(this).orientation)

@@ -19,10 +19,19 @@ import com.example.kadai.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+    //RecyclerView.addItemDecoration(separateLine)
+
     private lateinit var binding: ActivityMainBinding
     private var sw : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //val separateLine = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
+        //RecyclerView.addItemDecoration(separateLine)
+
         super.onCreate(savedInstanceState)
 
         //val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager(this).orientation)
